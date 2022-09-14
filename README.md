@@ -1,1 +1,2 @@
-# JS-2-level-GB-
+# JS-2-level
+Advanced JavaScript course GB 
