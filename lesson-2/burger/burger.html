@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="hamburger">
+    <form action="#">
+      <h2>Собери свой Гамбургер!</h2>
+      <fieldset class="choiceSize">
+        <legend>Выберите размер гамбургера</legend>
+        <label for="small">
+          <input type="radio" name="size" id="small-hamburger" value="small" checked>
+          Маленький (20 калорий), 50 рублей
+        </label>
+        <label for="big">
+          <input type="radio" name="size" id="big-hamburger" value="big">
+          Большой (40 калорий), 100 рублей
+        </label>
+      </fieldset>
+      <fieldset class="choiceFilling">
+        <legend>Выберите начинку</legend>
+        <label for="cheese">
+          <input type="radio" name="filling" id="cheese-filling-hamburger" value="cheese" checked>
+          Сыр (20 калорий), 10 рублей
+        </label>
+        <label for="lettuce">
+          <input type="radio" name="filling" id="lettuce-filling-hamburger" value="lettuce">
+          Салат (5 калорий), 20 рублей
+        </label>
+        <label for="potato">
+          <input type="radio" name="filling" id="potato-filling-hamburger" value="potato">
+          Картофель (10 калорий), 15 рублей
+        </label>
+      </fieldset>
+      <fieldset class="choiceAdditionalFilling">
+        <legend>Выберите дополнительную опцию</legend>
+        <label for="spice">
+          <input type="checkbox" name="additionalFilling" id="spice-afilling-hamburger" value="spice">
+          Приправа (бескалорийно), 15 рублей
+        </label>
+        <label for="mayonnaise">
+          <input type="checkbox" name="additionalFilling" id="mayonnaise-afilling-hamburger" value="mayonnaise">
+          Майонез (5 калорий), 20 рублей
+        </label>
+      </fieldset>
+      <button id="check">Собрать бургер</button>
+      <div id="result">
+        <h4>
+          Итог:
+          <span id="sumPrice">0</span> рублей (
+          <span id="sumCaloric">0</span> калорий )
+        </h4>
+      </div>
+    </form>
+  </div>
+  <script src="./burger_app.js"></script>
+</body>
+
+</html>
