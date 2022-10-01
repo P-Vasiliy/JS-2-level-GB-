@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #222222;
+  padding: 0 50px;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@font-face {
+  font-family: 'Glitch Smasher';
+  src: url(../fonts/GlitchSmasherRegular.otf);
+}
+
+header a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'Glitch Smasher';
+  font-size: 40px;
+  color: darkorange;
+}
+
+.btn-cart,
+.buy-btn,
+.del-btn {
+  background-color: orange;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-cart:hover,
+.buy-btn:hover,
+.del-btn:hover {
+  background-color: darkorange;
+  box-shadow: 0 0 5px;
+}
+
+.btn-cart:active,
+.buy-btn:active,
+.del-btn:active {
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4) inset;
+  transform: scale(0.97);
+}
+
+.btn-cart {
+  width: 80px;
+  height: 30px;
+}
+
+.basketContent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: absolute;
+  right: 0;
+  top: 45px;
+  box-shadow: 0.2em 0.2em 3px rgba(122, 122, 122, 0.3);
+  background-color: white;
+  text-align: center;
+  padding: 5px;
+  width: 250px;
+  border-radius: 3px;
+}
+
+.goodItemContent {
+  margin: 0 auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.goodItemBasket {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 250px;
+  padding-bottom: 5px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #EBEBEB;
+}
+
+.buy-btn {
+  width: 150px;
+  height: 30px;
+}
+
+.good-plus,
+.good-minus {
+  width: 20px;
+  height: 20px;
+}
+
+.goods_list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+img {
+  width: 150px;
+  height: 100px;
+}
+
+.basketContent img {
+  max-width: 90px;
+  max-height: 60px;
+}
+
+.goods_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 300px;
+  height: 220px;
+  margin: 20px auto;
+  padding-right: 5px;
+  font-size: 20px;
+}
+
+.total-sum {
+  font-size: 20px;
+  margin: 10px auto;
+  text-align: center;
+}
