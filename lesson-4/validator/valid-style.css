@@ -1,0 +1,15 @@
+input {
+  box-sizing: border-box;
+  border-radius: 3px;
+  margin: 5px 0 10px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.error-msg {
+  font-size: 8px;
+  color: red;
+  margin: 0;
+}
