@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Интернет-магазин</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <header id="headerContent">
+    <div class="header container">
+      <a href="./index.html">e-shop</a>
+      <div>
+        <input @input="search" v-model="inputText" class="header-search" type="search">
+        <button @click="show = !show" class="btn-cart" type="button">Корзина</button>
+        <div v-show="show" class="basketContent">
+          <div v-for="item of basket" class="goodItemBasket" data-productId="item.id_product">
+            <img :src="item.img" :alt="item.product_name">
+            <div class="goodItemContent">
+              <h3>{{ item.product_name }}</h3>
+              <p class="price">$<span>{{ item.quantity * item.price }}</span></p>
+              <button @click="removeFromBasket(item)" class="del-btn good-minus">-</button>
+              <span class="quantity">{{ item.quantity }}</span>
+              <button @click="addToBasket(item)" class="buy-btn good-plus">+</button>
+            </div>
+          </div>
+          <p v-if="!basket.length">Корзина пуста</p>
+          <div v-if="basket.length" class="total-sum">
+            <span style="font-weight: large">Итого: </span>
+            $<span class="total-sum_result">{{ sumTotal(basket) }}</span>
+          </div>
+        </div>
+      </div>
+  </header>
+  <main id="goods_list" class="container">
+    <p v-if="!goods.length" class="search-fail">Нет данных</p>
+    <div class="goods_list">
+      <div v-for="item of goods" class="goods_item" :data-productId="item.id_product">
+        <img :src="item.img" :alt="item.product_name">
+        <h3>{{ item.product_name }}</h3>
+        <p>$<span>{{ item.price }}</span></p>
+        <button @click="addToBasket(item)" class="buy-btn">Купить</button>
+      </div>
+    </div>
+    <div v-show="this.goods.length" class="goods_total-sum">
+      <span style="font-weight: bold">Общая стоимость: </span>
+      $<span>{{ sumTotal(goods) }}</span>
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8"></script>
+  <script type="module" src="./js/main.js"></script>
+</body>
+
+</html>
