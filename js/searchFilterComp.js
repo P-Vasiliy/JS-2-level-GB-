@@ -1,7 +1,7 @@
 Vue.component('search-filter', {
   data() {
     return {
-      goods: this.$parent.goods,
+      searchGoods: this.$parent.goods,
       searchResult: [],
       inputText: '',
     }
@@ -10,7 +10,7 @@ Vue.component('search-filter', {
   methods: {
     search() {
       const regExp = new RegExp(this.inputText, 'i');
-      this.searchResult = this.goods.filter(el =>
+      this.searchResult = this.searchGoods.filter(el =>
         regExp.test(el.product_name) || regExp.test(el.price));
 
       this.$parent.goods = this.searchResult;

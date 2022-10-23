@@ -17,8 +17,9 @@ Vue.component('basket-list', {
             if (findEl) {
               findEl.quantity++;
             } else {
-              this.$set(event, 'quantity', 1);
-              this.basketList.unshift(event);
+              const eventEl = Object.assign({ quantity: 1 }, event);
+              this.basketList.unshift(eventEl);
+              //this.$set(event, 'quantity', 1); // Баг - меняется общая стоимость в каталоге
             }
           } else {
             alert('Добавление товара в корзину не разрешено!');
@@ -45,11 +46,9 @@ Vue.component('basket-list', {
     sumTotal(arr) {
       let sum = 0;
       arr.forEach(el => {
-        if (el.quantity) {
-          sum += el.price * el.quantity;
-        } else {
-          sum += el.price;
-        }
+        el.quantity
+          ? sum += el.price * el.quantity
+          : sum += el.price;
       });
       return sum;
     },
